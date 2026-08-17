@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 00;}
+
+        body{
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(250, 250, 250);
+        }
+
+        .card{
+            background-color: rgb(238, 238, 238);
+            border-radius: 25px;
+            margin: 10px;
+        }
+        .cardArea{
+            padding: 10px;
+            background-color: white;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <textarea name="" id="todo" placeholder="Enter your todo tasks here"></textarea>
+        <button onclick="createTodo()">Create Todo</button>
+    </div>
+
+    <div class="cardArea">
+
+    </div>
+
+    <script>
+        function createTodo(){
+            let txt = document.getElementById("todo").innerHTML;
+            let div = document.createElement("div");
+            div.classList.add('card')
+            let p = document.createElement("p")
+            p.innerHTML = txt;
+            div.appendChild(p)
+            document.getElementsByClassName('cardArea')[0].appendChild(div)
+        }
+    </script>
+</body>
+</html>
